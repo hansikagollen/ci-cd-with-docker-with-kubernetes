@@ -27,9 +27,8 @@ pipeline {
         stage('Build & Test') {
             steps {
                 echo '🧪 Running Unit Tests...'
-                bat '''
-                %PYTHON% -m unittest discover -s tests
-                '''
+                bat 'python -m unittest discover .'
+
             }
         }
 
