@@ -1,0 +1,83 @@
+# Open Command Prompt (Run as Administrator)
+# Check versions
+python --version
+pip --version
+git --version
+docker --version
+kubectl version --client
+minikube version
+
+2️⃣ Create Project Folder
+mkdir cicd-python-app
+cd cicd-python-app
+git init
+
+3.Create project files
+app.py
+requirements.txt
+Dockerfile
+jenkinsfile
+deployment.yaml
+service.yaml
+
+4.Build and Test Python locally
+pip install -r requirements.txt
+python app.py
+
+5.Docker commands
+# Login to Docker Hub (replace with your username)
+docker login
+
+# Build Docker image
+docker build -t <your-dockerhub-username>/cicd-python-app:latest .
+
+# Run locally to test
+docker run -p 5000:5000 <your-dockerhub-username>/cicd-python-app
+
+# Stop container (Ctrl + C)
+# Push image to Docker Hub
+docker push <your-dockerhub-username>/cicd-python-app:latest
+
+7️⃣ Git commands (commit + push to GitHub)
+git remote add origin https://github.com/<your-username>/cicd-python-app.git
+
+git add .
+git commit -m "Initial commit: Python Flask app with Docker, Jenkinsfile, and Kubernetes manifests"
+
+git push -u origin main
+
+8️⃣ Jenkins setup
+
+(Inside Jenkins UI → Configure job)
+
+# Jenkinsfile pipeline executes automatically
+# Stages: Build → Docker Build → Push → Deploy
+
+
+If running manually:
+
+# Build the pipeline manually in Jenkins after saving configuration
+
+9️⃣ Minikube setup
+# Start Kubernetes cluster
+minikube start
+
+# Verify
+kubectl get nodes
+
+# Apply Deployment & Service
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+# Check resources
+kubectl get pods
+kubectl get svc
+
+🔟 Access your app
+minikube service python-flask-service
+
+✅ Optional: Stop everything
+minikube stop
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+
