@@ -1,10 +1,5 @@
-from flask import Flask
+def add(a, b):
+    return a + b
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Hello from CI/CD pipeline!"
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    print("Sum:", add(2, 3))
