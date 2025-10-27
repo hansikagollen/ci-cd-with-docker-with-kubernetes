@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-cicd-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-cicd-demo
+  template:
+    metadata:
+      labels:
+        app: python-cicd-demo
+    spec:
+      containers:
+        - name: python-cicd-demo
+          image: your-dockerhub-username/python-cicd-demo:latest
+          ports:
+            - containerPort: 5000
