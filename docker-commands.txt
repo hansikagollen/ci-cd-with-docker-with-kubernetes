@@ -1,0 +1,9 @@
+✅ Summary of Commands
+Action	Command
+Build image	docker build -t mynodeapp .
+Run container	docker run -d -p 3000:3000 mynodeapp
+Login to Docker Hub	docker login
+Tag image	docker tag mynodeapp hansika01/mynodeapp:latest
+Push image	docker push hansika01/mynodeapp:latest
+Pull image	docker pull hansika01/mynodeapp:latest
+Run pulled image	docker run -d -p 3000:3000 hansika01/mynodeapp:latest
