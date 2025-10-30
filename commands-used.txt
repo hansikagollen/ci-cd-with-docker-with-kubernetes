@@ -81,3 +81,8 @@ minikube stop
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 
+##maven build code
+mvn archetype:generate -DgroupId=com.example.webapp \
+    -DartifactId=SimpleWebApp \
+    -DarchetypeArtifactId=maven-archetype-webapp \
+    -DinteractiveMode=false
