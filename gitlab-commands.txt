@@ -1,0 +1,15 @@
+🧩 Basic Git Commands (used with GitLab)
+Purpose	Command
+Configure username/email	git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+Clone a repository	git clone https://gitlab.com/username/repo.git
+Check repo status	git status
+Add files for commit	git add . (adds all) or git add filename
+Commit changes	git commit -m "Your message"
+Push changes to GitLab	git push origin main (or master / your branch name)
+Pull latest changes	git pull origin main
+Create new branch	git checkout -b branch-name
+Switch branch	git checkout branch-name
+Merge a branch	git merge branch-name
+View commit history	git log --oneline
+Remove file from staging	git reset HEAD filename
